@@ -30,7 +30,6 @@ for i in range(len(u)):
     uv_grid[u_scaled[i], v_scaled[i]] += real[i] + 1j * imag[i]
     print(uv_grid[u_scaled[i], v_scaled[i]])
 
-
 image = np.fft.fftshift(np.fft.ifft2(np.fft.ifftshift(uv_grid)))
 image_abs = np.abs(image)
 
@@ -42,6 +41,7 @@ ax.set_xlabel('X (arcseconds)')
 ax.set_ylabel('Y (arcseconds)')
 ax.set_title('Reconstructed Image with UV Coverage')
 ax.legend()
+
 plt.colorbar(img, ax=ax, label='Normalized Intensity')
 plt.show()
 
